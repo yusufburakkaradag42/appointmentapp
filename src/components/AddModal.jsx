@@ -3,22 +3,32 @@ import Modal from "react-bootstrap/Modal"
 import Button from "react-bootstrap/Button"
 import Form from "react-bootstrap/Form"
 
-export function AddModal({ show, 
+export function AddModal({
+  show,
   handleClose,
-   drName ,
-   appointment,
-   setAppointment
-  }) {
+  drName,
+  appointments,
+  setAppointments,
+}) {
   const [patientName, setPatientName] = useState("")
   const [date, setDate] = useState("")
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    // ----
+    setAppointments([
+      ...appointments,
+      {
+        id: appointments.length + 1,
+        patient: patientName,
+        day: date,
+        consulted: false,
+        doctor: drName,
+      },
+    ])
     handleClose()
   }
 
-  console.log(patientName, date)
+  console.log(appointments)
   return (
     <>
       <Modal show={show} onHide={handleClose}>

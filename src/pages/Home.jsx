@@ -6,22 +6,23 @@ import { appointmentData } from "../helper/data"
 
 const Home = () => {
   const [doctors, setDoctors] = useState(doctorData)
-  const [appointment, setAppointmend] = useState(appointmentData)
+  const [appointments, setAppointments] = useState(appointmentData)
 
  
-    
-  
 
+  console.log(appointments)
   console.log(doctors)
   return (
     <main className="text-center mt-2 vh-100">
       <h1 className="display-5 text-danger">CLARUS HOSPITAL</h1>
-      <Doctors doctors={doctors} 
-      appointment={appointment}
-      setappointmend={setAppointmend}/>
+      <Doctors
+        doctors={doctors}
+        appointments={appointments}
+        setAppointments={setAppointments}
+      />
       <AppointmentList />
     </main>
   )
-  }
+}
 
 export default Home

@@ -4,7 +4,7 @@ import Col from "react-bootstrap/Col"
 import { AddModal } from "./AddModal"
 import { useState } from "react"
 
-const Doctors = ({ doctors , appointment,setAppointmend}) => {
+const Doctors = ({ doctors, appointments, setAppointments }) => {
   const [show, setShow] = useState(false)
   const [selectedDrName, setSelectedDrName] = useState("")
 
@@ -26,10 +26,7 @@ const Doctors = ({ doctors , appointment,setAppointmend}) => {
 
       <Row className="justify-content-center">
         {doctors.map((dr) => (
-          <Col key={dr.id} 
-          xs={6}
-          sm={4} 
-          md={3}>
+          <Col key={dr.id} xs={6} sm={4} md={3}>
             <img
               src={dr.img}
               alt={dr.name}
@@ -46,10 +43,9 @@ const Doctors = ({ doctors , appointment,setAppointmend}) => {
         show={show}
         handleClose={() => setShow(false)}
         drName={selectedDrName}
-        appointment={appointment}
-        setAppointmend={setAppointmend}
-/>
-    
+        appointments={appointments}
+        setAppointments={setAppointments}
+      />
     </Container>
   )
 }
