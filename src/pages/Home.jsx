@@ -5,7 +5,7 @@ import { doctorData } from "../helper/data"
 import { appointmentData } from "../helper/data"
 
 const Home = () => {
-  const [doctors, setDoctors] = useState(doctorData)
+  const [doctors] = useState(doctorData)
   const [appointments, setAppointments] = useState(appointmentData)
 
  
